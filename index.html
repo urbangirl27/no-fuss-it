@@ -1,0 +1,361 @@
+
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Personal IT support and simple website design for small businesses and independent professionals.">
+  <title>No Fuss IT | Personal IT Support & Website Design</title>
+
+  <style>
+    :root {
+      --black: #101113;
+      --charcoal: #202226;
+      --gold: #d5ad58;
+      --yellow: #f0ce62;
+      --light-grey: #dedede;
+      --muted-grey: #aeb0b4;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behaviour: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--light-grey);
+      background:
+        radial-gradient(ellipse at 20% 25%, #414247 0%, transparent 42%),
+        radial-gradient(ellipse at 75% 65%, #34363b 0%, transparent 38%),
+        linear-gradient(135deg, var(--black), var(--charcoal), #151619);
+      background-attachment: fixed;
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.7;
+    }
+
+    a {
+      color: var(--gold);
+    }
+
+    .site-header {
+      padding: 26px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      border-bottom: 1px solid #ffffff18;
+    }
+
+    .logo {
+      color: var(--gold);
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+
+    .logo span {
+      color: var(--light-grey);
+      font-weight: 400;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+
+    nav a {
+      color: var(--light-grey);
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+
+    nav a:hover {
+      color: var(--yellow);
+    }
+
+    .hero {
+      min-height: 72vh;
+      padding: 75px 8%;
+      display: grid;
+      grid-template-columns: minmax(240px, 0.85fr) minmax(300px, 1.15fr);
+      align-items: center;
+      gap: 65px;
+    }
+
+    .portrait-placeholder {
+      min-height: 400px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid #d5ad5840;
+      border-radius: 180px 180px 24px 24px;
+      background:
+        radial-gradient(ellipse at 50% 35%, #77787c45, transparent 60%),
+        linear-gradient(160deg, #34363a88, #111214aa);
+      color: var(--muted-grey);
+      text-align: center;
+      padding: 30px;
+    }
+
+    .portrait-placeholder span {
+      max-width: 220px;
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+
+    h1, h2, h3 {
+      line-height: 1.2;
+    }
+
+    h1 {
+      margin: 15px 0 22px;
+      color: #fff;
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      font-weight: 500;
+    }
+
+    h1 span {
+      color: var(--gold);
+    }
+
+    .intro {
+      color: #d0d0d2;
+      font-size: 1.08rem;
+      max-width: 580px;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 18px;
+      padding: 12px 25px;
+      background: var(--gold);
+      color: var(--black);
+      text-decoration: none;
+      font-weight: 700;
+      border-radius: 3px;
+    }
+
+    .button:hover {
+      background: var(--yellow);
+    }
+
+    section.content-section {
+      padding: 75px 8%;
+      border-top: 1px solid #ffffff15;
+    }
+
+    .section-heading {
+      margin: 0 0 12px;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      color: #fff;
+      font-weight: 500;
+    }
+
+    .section-intro {
+      color: var(--muted-grey);
+      max-width: 650px;
+      margin-bottom: 35px;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 25px;
+    }
+
+    .service-card, .portfolio-card {
+      padding: 30px;
+      border: 1px solid #d5ad5835;
+      background: #17181bc9;
+      border-radius: 5px;
+    }
+
+    .service-card h3, .portfolio-card h3 {
+      color: var(--gold);
+      font-size: 1.35rem;
+    }
+
+    .service-card p, .portfolio-card p {
+      color: var(--muted-grey);
+    }
+
+    .portfolio-card {
+      max-width: 700px;
+    }
+
+    .portfolio-link {
+      display: inline-block;
+      margin-top: 8px;
+      text-decoration: none;
+      border-bottom: 1px solid var(--gold);
+    }
+
+    .contact-panel {
+      padding: 35px;
+      background: #d5ad5810;
+      border-left: 3px solid var(--gold);
+      max-width: 760px;
+    }
+
+    .site-footer {
+      padding: 28px 8%;
+      color: var(--muted-grey);
+      font-size: 0.85rem;
+      border-top: 1px solid #ffffff15;
+      text-align: center;
+    }
+
+    @media (max-width: 760px) {
+      .site-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        padding-top: 45px;
+      }
+
+      .portrait-placeholder {
+        min-height: 300px;
+        max-width: 420px;
+        width: 100%;
+        margin: auto;
+      }
+
+      .service-grid {
+        grid-template-columns: 1fr;
+      }
+
+      nav {
+        gap: 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="logo">NO FUSS <span>IT</span></div>
+
+    <nav aria-label="Main navigation">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="about">
+      <div class="portrait-placeholder">
+        <span>Your portrait will go here.<br>
+        We will add your cut-out photograph in the next stage.</span>
+      </div>
+
+      <div class="hero-copy">
+        <p class="eyebrow">Personal service. Practical solutions.</p>
+        <h1>Technology, <span>without</span> the fuss.</h1>
+
+        <p class="intro">
+          Hello, I am an independent IT support and website design
+          professional, helping people and small businesses make
+          technology work for them.
+        </p>
+
+        <p class="intro">
+          From everyday IT support to a simple, professional website,
+          I believe good technology should make life easier, not more
+          complicated.
+        </p>
+
+        <a class="button" href="#services">Discover my services</a>
+      </div>
+    </section>
+
+    <section class="content-section" id="services">
+      <p class="eyebrow">How I can help</p>
+      <h2 class="section-heading">Straightforward solutions.</h2>
+      <p class="section-intro">
+        Personal attention, clear communication and practical
+        solutions tailored to your needs.
+      </p>
+
+      <div class="service-grid">
+        <article class="service-card">
+          <h3>IT Support</h3>
+          <p>
+            Practical assistance with everyday technology,
+            troubleshooting and IT-related problems, explained
+            clearly and without unnecessary jargon.
+          </p>
+        </article>
+
+        <article class="service-card">
+          <h3>Simple Website Design</h3>
+          <p>
+            Clean, professional static websites for small businesses
+            and independent professionals who need a clear online
+            presence without unnecessary complexity.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="content-section" id="portfolio">
+      <p class="eyebrow">Selected work</p>
+      <h2 class="section-heading">A website brought to life.</h2>
+      <p class="section-intro">
+        A look at a recent website project.
+      </p>
+
+      <article class="portfolio-card">
+        <h3>Kamenka Klášterec</h3>
+        <p>
+          A website for a welcoming accommodation in Klášterec,
+          designed to present the property, its atmosphere and
+          essential information for prospective guests.
+        </p>
+        <a class="portfolio-link"
+           href="https://kamenkaklasterec.cz/"
+           target="_blank"
+           rel="noopener noreferrer">
+          Visit the website →
+        </a>
+      </article>
+    </section>
+
+    <section class="content-section" id="contact">
+      <p class="eyebrow">Get in touch</p>
+      <h2 class="section-heading">Let us keep things simple.</h2>
+
+      <div class="contact-panel">
+        <p>
+          Looking for IT support or a straightforward website
+          for your business? I would be happy to hear from you.
+        </p>
+        <p>
+          Contact details will be added here once we decide
+          which email address you would like to publish.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 No Fuss IT. Personal IT support and website design.</p>
+  </footer>
+</body>
+</html>
