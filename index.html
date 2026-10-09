@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en-GB">
 <head>
@@ -22,7 +21,7 @@
     }
 
     html {
-      scroll-behaviour: smooth;
+      scroll-behavior: smooth;
     }
 
     body {
@@ -87,23 +86,24 @@
       gap: 65px;
     }
 
-    .portrait-placeholder {
-      min-height: 400px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border: 1px solid #d5ad5840;
+    .portrait-frame {
+      width: 100%;
+      max-width: 520px;
+      aspect-ratio: 4 / 5;
+      margin: 0 auto;
+      overflow: hidden;
+      border: 1px solid #d5ad5870;
       border-radius: 180px 180px 24px 24px;
-      background:
-        radial-gradient(ellipse at 50% 35%, #77787c45, transparent 60%),
-        linear-gradient(160deg, #34363a88, #111214aa);
-      color: var(--muted-grey);
-      text-align: center;
-      padding: 30px;
+      background: linear-gradient(160deg, #34363a88, #111214aa);
+      box-shadow: 0 20px 50px #00000060;
     }
 
-    .portrait-placeholder span {
-      max-width: 220px;
+    .portrait-frame img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      object-position: 50% 20%;
     }
 
     .eyebrow {
@@ -228,11 +228,9 @@
         padding-top: 45px;
       }
 
-      .portrait-placeholder {
-        min-height: 300px;
+      .portrait-frame {
         max-width: 420px;
-        width: 100%;
-        margin: auto;
+        border-radius: 150px 150px 24px 24px;
       }
 
       .service-grid {
@@ -260,9 +258,8 @@
 
   <main>
     <section class="hero" id="about">
-      <div class="portrait-placeholder">
-        <span>Your portrait will go here.<br>
-        We will add your cut-out photograph in the next stage.</span>
+      <div class="portrait-frame">
+        <img src="Meet_Your_IT_Specialist.jpg" alt="Portrait of the independent specialist behind No Fuss IT">
       </div>
 
       <div class="hero-copy">
